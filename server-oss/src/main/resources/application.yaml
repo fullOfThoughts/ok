@@ -18,7 +18,7 @@ spring:
 # aliyun oss
 aliyun:
   oss:
-    endpoint: oss-cn-hangzhou.aliyuncs.com
-    keyId: LTAI5tD8VR5nx5kpqRov63EC
-    keySecret: CA3LISuh6cy4NPwjF36R0Lfdyul2Aj
-    bucketName: baomidou
+    endpoint: oss-cn-cs.com
+    keyId: LTAI5kpqRov63EC
+    keySecret: CA3LISNPwjF36R0Lfdyul2Aj
+    bucketName: baodou
