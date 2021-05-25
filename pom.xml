@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.bmd</groupId>
+    <artifactId>bmd-parent</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>server-common</module>
+        <module>server-core</module>
+        <module>server-oss</module>
+        <module>server-gateway</module>
+        <module>untitled</module>
+        <module>server-mq</module>
+        <module>server-es</module>
+    </modules>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.5.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <properties>
+        <java.version>1.8</java.version>
+        <spring-cloud-alibaba.version>2.2.2.RELEASE</spring-cloud-alibaba.version>
+        <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
+        <mybatis-plus.version>3.4.1</mybatis-plus.version>
+        <velocity.version>2.0</velocity.version>
+        <swagger.version>2.9.2</swagger.version>
+        <swagger-bootstrap-ui.version>1.9.2</swagger-bootstrap-ui.version>
+        <shiro-springBoot.version>1.5.3</shiro-springBoot.version>
+        <jwt.version>3.13.0</jwt.version>
+        <hutool.version>5.6.3</hutool.version>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <!--Spring Cloud-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--Spring Cloud Alibaba-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--mybatis-plus-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!--mybatis-plus 代码生成器-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!-- Mybatis Plus 代码生成器模板引擎,  -->
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>${velocity.version}</version>
+            </dependency>
+
+            <!--swagger-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <!--swagger ui-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <!--swagger-bootstrap-ui-->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>swagger-bootstrap-ui</artifactId>
+                <version>${swagger-bootstrap-ui.version}</version>
+            </dependency>
+            <!--            shiro-->
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-spring-boot-starter</artifactId>
+                <version>${shiro-springBoot.version}</version>
+            </dependency>
+            <!--jwt-->
+            <dependency>
+                <groupId>com.auth0</groupId>
+                <artifactId>java-jwt</artifactId>
+                <version>${jwt.version}</version>
+            </dependency>
+            <!--            hutool-->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>

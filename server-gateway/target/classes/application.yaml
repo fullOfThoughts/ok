@@ -1,0 +1,27 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: server-gateway
+  profiles:
+    active: dev
+# gateway
+  cloud:
+    gateway:
+      routes:
+        - id: server-core
+          uri: lb://server-core
+          predicates:
+            - Path=/api/**
+        - id: server-oss
+          uri: lb://server-oss
+          predicates:
+            - Path=/oss/**
+      discovery:
+        locator:
+          enabled: true
+# nacos
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+

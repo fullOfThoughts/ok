@@ -1,0 +1,24 @@
+server:
+  port: 8200
+spring:
+  application:
+    name: server-oss
+  profiles:
+    active: dev
+# nacos
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+# file size
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+# aliyun oss
+aliyun:
+  oss:
+    endpoint: oss-cn-hangzhou.aliyuncs.com
+    keyId: LTAI5tD8VR5nx5kpqRov63EC
+    keySecret: CA3LISuh6cy4NPwjF36R0Lfdyul2Aj
+    bucketName: baomidou

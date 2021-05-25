@@ -1,0 +1,51 @@
+server:
+  port: 8100
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: server-core
+# database
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.29.122:3306/bmd?serverTimezone=GMT%2B8&characterEncoding=utf-8
+    username: root
+    password: 123456
+# nacos
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+# redis
+  redis:
+    port: 6379
+    host: localhost
+    database: 0
+# fileSize
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+# mq
+  rabbitmq:
+    host: 192.168.29.122
+    port: 5672
+    virtual-host: es
+    username: es
+    password: es
+# mybatis
+#mybatis-plus:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl   # 打印mybatis执行日志
+# feign
+feign:
+  client:
+    config:
+      default:
+        read-timeout: 6000
+        connect-timeout: 6000
+
+logging:
+  level:
+    root: info
